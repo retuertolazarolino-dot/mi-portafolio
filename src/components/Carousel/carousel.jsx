@@ -24,20 +24,20 @@ const proyectos = [
       "Desarrollo de sitios web empresariales bajo metodología Scrum. Implementación de secciones internas, diseño responsivo y funcionalidades como banners de cookies y e-commerce con WooCommerce.",
     tecnologias: ["WordPress", "Elementor", "JavaScript", "CSS"],
     imagen: img1,
-    enlace: "#", // cambia a la URL real si el sitio está online
+    enlace: "https://consigueventas.com/", // cambia a la URL real si el sitio está online
   },
   {
     id: 2,
-    titulo: "Aula Virtual – IPDECTI",
+    titulo: "Aula Virtual – IPDECTI (No disponible)",
     descripcion:
       "Integración y personalización de plataforma Moodle para la gestión académica y emisión de certificados. Diseño de interfaz y configuración de cursos para mejorar la experiencia educativa.",
     tecnologias: ["Moodle", "PHP", "CSS", "Canva"],
     imagen: img2,
-    enlace: "#",
+    enlace: "https://ipdecti.edu.pe/",
   },
   {
     id: 3,
-    titulo: "Aplicación Móvil – Animal Pets",
+    titulo: "Aplicación Móvil – Animal Pets (No disponible)",
     descripcion:
       "Aplicación móvil para el registro y seguimiento de pacientes veterinarios, con módulos de historial clínico y gestión de citas.",
     tecnologias: ["JavaScript", "Firebase", "Figma"],
@@ -46,7 +46,7 @@ const proyectos = [
   },
   {
     id: 4,
-    titulo: "Landing Page – Montevero Consultora",
+    titulo: "Landing Page – Montevero Consultora (No disponible)",
     descripcion:
       "Diseño y desarrollo de landing page corporativa para una consultora de ingeniería y topografía, destacando sus servicios y canales de contacto.",
     tecnologias: ["WordPress", "Elementor", "HTML", "CSS"],
