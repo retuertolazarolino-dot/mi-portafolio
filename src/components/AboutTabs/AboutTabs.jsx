@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const tabs = [
   { id: "experience", label: "Experiencia" },
   { id: "education", label: "Educación" },
-  { id: "skills", label: "Skills" },
+  { id: "skills", label: "Habilidades" },
   { id: "about", label: "Sobre mí" },
 ];
 
@@ -203,9 +203,9 @@ const renderContent = (activeTab) => {
           initial="initial"
           animate="animate"
           exit="exit"
-          className="h-[400px] flex flex-col"
+          className="flex flex-col h-auto md:h-[400px]"
         >
-          <h3 className="text-2xl font-semibold text-[#00fd9c] mb-4">Skills</h3>
+          <h3 className="text-2xl font-semibold text-[#00fd9c] mb-4">Habilidades</h3>
           <p className="text-gray-300 mb-6">Tecnologías y herramientas que utilizo en mi flujo de trabajo.</p>
           <motion.div
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
