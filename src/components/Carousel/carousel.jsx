@@ -11,7 +11,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import img1 from "../../assets/work/work1.png";
 import img2 from "../../assets/work/ipdecti.png";
 import img3 from "../../assets/work/animalPets.png";
-import img4 from "../../assets/work/thumb3.png";
+import img4 from "../../assets/work/consulrotia.jpeg";
 import img5 from "../../assets/work/consigueventas.png";
 
 
@@ -46,7 +46,7 @@ const proyectos = [
   },
   {
     id: 4,
-    titulo: "Landing Page – Montevero Consultora (No disponible)",
+    titulo: "Landing Page – Consultoría Lia (En Desarrollo)",
     descripcion:
       "Diseño y desarrollo de landing page corporativa para una consultora de ingeniería y topografía, destacando sus servicios y canales de contacto.",
     tecnologias: ["WordPress", "Elementor", "HTML", "CSS"],
