@@ -71,59 +71,34 @@ select {
   background-position: right 1rem center;
   background-size: 1rem;
 }
-@keyframes rgbBorder {
-  0% {
-    background-position: 0% 50%;
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 4px #00fd9c,       /* halo interno */
+      0 0 8px #00fd9c40,     /* halo medio */
+      0 0 12px #00fdc840;    /* halo externo */
   }
   50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+    box-shadow: 
+      0 0 6px #00fd9c80,
+      0 0 12px #00fdc880,
+      0 0 18px #00fd9c40;
   }
 }
 
 .animate-borderGlow-hover {
-  position: relative;
-  border-radius: 0.75rem; /* igual que rounded-xl */
-  overflow: hidden;
+  animation: borderGlow 3s ease-in-out infinite;
 }
 
-.animate-borderGlow-hover::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(
-    120deg,
-    #00fd9c,
-    #33e4a0,
-    #003827,
-    #06c77d
-  );
-  background-size: 400% 400%;
-  background-position: 0% 50%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-    mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
-.animate-borderGlow-hover:hover::before {
-  opacity: 1;
-  animation: rgbBorder 6s linear infinite;
-}
-html {
-  scroll-behavior: smooth;
-}
-section {
-  scroll-margin-top: 50px; /* ajusta según la altura real de tu navbar */
+.animate-pulseGlow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
 }

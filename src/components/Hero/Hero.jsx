@@ -92,7 +92,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-gray-300 max-w-lg mx-auto md:mx-0 text-base md:text-lg leading-relaxed"
           >
-            Desarrollador de software enfocado en crear soluciones digitales eficientes y atractivas.
+            Desarrollador de software y paginas web enfocado en crear soluciones digitales eficientes y atractivas.
             Me apasiona transformar ideas en productos reales usando tecnologías modernas.
           </motion.p>
 

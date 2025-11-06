@@ -41,6 +41,13 @@ const experiencias = [
     descripcion:
       "Desarrollo de páginas web corporativas bajo Elementor. Implementación de buscadores personalizados, integración de SEO y optimización de carga.",
   },
+   {
+    empresa: "Proyectos Freelance",
+    cargo: "Desarrollador Frontend",
+    año: "2024 - Presente",
+    descripcion:
+      "Creación de landing pages y sitios web adaptables, usando WordPress HTML, CSS, JavaScript y React.",
+  },
   {
     empresa: "Instituto IPDECTI",
     cargo: "Practicante de Desarrollo Web",
@@ -55,43 +62,21 @@ const experiencias = [
     descripcion:
       "Apoyo en el desarrollo de una aplicación móvil para gestión veterinaria, registro de pacientes y programación de citas.",
   },
-  {
-    empresa: "Proyectos Freelance",
-    cargo: "Desarrollador Frontend",
-    año: "2024 - Presente",
-    descripcion:
-      "Creación de landing pages y sitios web adaptables, usando HTML, CSS, JavaScript, React y WordPress.",
-  },
+ 
 ];
 
 
 const educacion = [
-  {
+    {
     institucion: "Universidad Nacional José Faustino Sánchez Carrión",
     grado: "Ingeniería de Sistemas",
-    año: "2021 - Culminado",
-    detalle: "Formación en desarrollo de software, análisis de sistemas y bases de datos.",
-  },
-  {
-    institucion: "Google Activate",
-    grado: "Marketing Digital",
-    año: "2023",
-    detalle: "Certificación en posicionamiento SEO, analítica web y presencia digital.",
-  },
-  {
-    institucion: "Udemy",
-    grado: "Curso de React y Desarrollo Frontend",
-    año: "2024",
-    detalle: "Aprendizaje práctico en componentes, hooks y diseño responsivo con Tailwind CSS.",
-  },
-  {
-    institucion: "OpenBootcamp",
-    grado: "Formación Fullstack",
-    año: "2024",
-    detalle: "Fundamentos de frontend y backend aplicados al desarrollo de proyectos reales.",
+    año: "2020 - 2025",
+    detalle:
+      "Egresado de Ingeniería de Sistemas con formación en desarrollo de software, análisis de sistemas y gestión de bases de datos.",
   },
 ];
 
+  
 
 const skillsData = [
   "HTML5",
