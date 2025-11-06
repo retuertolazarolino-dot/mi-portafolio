@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaDownload, FaEnvelope } from "react-icons/fa";
 import Photo from "../../assets/photo.png";
+import Photo2 from "../../assets/perfil.png";
 
 export default function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
@@ -191,9 +192,9 @@ export default function HeroSection() {
                 transition={{ duration: 0.3 }}
               />
               <img
-                src={Photo}
+                src={Photo2}
                 alt="Lino Retuerto"
-                className="w-full h-full object-cover rounded-full relative z-10"
+                className="w-full h-full object-contain rounded-full relative z-10"
               />
             </motion.div>
           </div>
