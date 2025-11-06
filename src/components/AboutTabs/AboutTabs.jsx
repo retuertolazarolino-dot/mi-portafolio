@@ -275,7 +275,7 @@ const AboutTabs = () => {
   const [activeTab, setActiveTab] = useState("experience");
 
   return (
-    <section className="bg-[#1c1b22] text-white py-8 md:py-16">
+    <section id="trayectoria" className="bg-[#1c1b22] text-white py-5 md:py-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* 🔹 Encabezado general con animación de entrada */}
         <div className="text-center mb-12">

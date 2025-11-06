@@ -2,8 +2,10 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState, useRef } from "react";
 import { Listbox } from "@headlessui/react";
 import { AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+// He actualizado esta línea para incluir FaWhatsapp
+import { FaChevronDown, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaClock, FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+
 
 export default function ContactSection() {
   const [isHovered, setIsHovered] = useState(false);
@@ -16,10 +18,11 @@ export default function ContactSection() {
   const y = useMotionValue(0);
 
   const services = [
-    { id: 1, name: "Diseño Web" },
-    { id: 2, name: "Optimización SEO" },
-    { id: 3, name: "Marketing Digital" },
-    { id: 4, name: "Soporte Técnico" },
+    { id: 1, name: "Desarrollo Web" },
+    { id: 2, name: "Desarrollo web (Wordpress)" },
+    { id: 3, name: "Optimización SEO" },
+    { id: 4, name: "Marketing Digital" },
+    { id: 5, name: "Soporte Técnico" },
   ];
 
   const gradient = useTransform(
@@ -53,7 +56,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-[#1c1b22] text-white py-16 flex flex-col items-center">
+    <section id="contacto" className="bg-[#1c1b22] text-white py-10 flex flex-col items-center">
       {/* 🔹 Título */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -132,8 +135,8 @@ export default function ContactSection() {
                     <Listbox.Button
                       name="servicio"
                       className="w-full flex justify-between items-center p-3 rounded-md 
-                                 bg-[#232229]/60 border border-[#00fd9c]/20 text-gray-300 
-                                 hover:border-[#00fd9c] transition-all duration-300"
+                                     bg-[#232229]/60 border border-[#00fd9c]/20 text-gray-300 
+                                     hover:border-[#00fd9c] transition-all duration-300"
                     >
                       {selectedService
                         ? selectedService.name
@@ -213,23 +216,87 @@ export default function ContactSection() {
         </motion.div>
 
         {/* 🔹 Derecha: Información de contacto */}
-        <div className="md:w-2/5 w-full flex flex-col gap-6 justify-center bg-[#1c1b22] rounded-xl p-6 border border-[#00fd9c]/10">
-          <div className="flex items-center gap-4">
-            <FaPhoneAlt className="text-[#00fd9c] text-3xl" />
-            <div>
-              <h4 className="text-sm uppercase text-gray-400">Teléfono</h4>
-              <p className="text-lg font-semibold">+51 999 888 777</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <FaEnvelope className="text-[#00fd9c] text-3xl" />
-            <div>
-              <h4 className="text-sm uppercase text-gray-400">Correo</h4>
-              <p className="text-lg font-semibold">contacto@miweb.com</p>
-            </div>
-          </div>
+        
+        <div className="md:w-2/5 w-full flex flex-col gap-3 md:gap-4 justify-center">
+  {[
+    {
+      icon: FaWhatsapp,
+      label: "WhatsApp",
+      value: "+51 986895900",
+      link: "https://wa.me/51986895900?text=Hola,%20quisiera%20consultar%20sobre%20un%20proyecto.",
+    },
+    {
+      icon: FaPhoneAlt,
+      label: "Teléfono",
+      value: "+51 986895900",
+      link: "tel:+51986895900",
+    },
+    {
+      icon: FaEnvelope,
+      label: "Correo",
+      value: "retuertolazarolino@gmail.com",
+      link: "mailto:retuertolazarolino@gmail.com",
+    },
+    {
+      icon: FaLinkedin,
+      label: "Perfil Social",
+      value: "Lino Retuerto",
+      link: "https://www.linkedin.com/in/lino-alberto-retuerto-lazaro-834b29358/",
+    },
+    {
+      icon: FaClock,
+      label: "Horario de Respuesta",
+      value: "Lunes a Sábado 9am - 6pm",
+      link: null,
+    },
+    {
+      icon: FaMapMarkerAlt,
+      label: "Ubicación",
+      value: "Huacho, Lima, Perú",
+      link: null,
+    },
+  ].map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.1 * index }}
+      className="w-full"
+    >
+      <a
+        href={item.link || undefined}
+        target={item.link ? "_blank" : undefined}
+        rel={item.link ? "noopener noreferrer" : undefined}
+        className={`flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl transition-all duration-300 ${
+          item.link
+            ? "cursor-pointer bg-[#232229]/60 border border-[#00fd9c]/20 hover:border-[#00fd9c] hover:shadow-[0_0_15px_rgba(0,253,156,0.2)]"
+            : "border border-[#00fd9c]/10 bg-[#232229]/50 cursor-default"
+        }`}
+        onMouseEnter={
+          item.link
+            ? (e) => (e.currentTarget.style.transform = "translateY(-3px)")
+            : undefined
+        }
+        onMouseLeave={
+          item.link
+            ? (e) => (e.currentTarget.style.transform = "translateY(0)")
+            : undefined
+        }
+        style={{ willChange: item.link ? "transform, box-shadow" : "auto" }}
+      >
+        <item.icon className="text-[#00fd9c] text-2xl md:text-3xl shrink-0" />
+        <div>
+          <h4 className="text-xs md:text-sm uppercase text-gray-400">{item.label}</h4>
+          <p className="text-sm md:text-lg font-semibold text-white wrap-break-word">
+            {item.value}
+          </p>
         </div>
+      </a>
+    </motion.div>
+  ))}
+</div>
+
       </div>
     </section>
   );

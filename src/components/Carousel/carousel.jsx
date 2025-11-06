@@ -8,11 +8,13 @@ import WorkSliderBtns from "./WorkSliderBtns";
 import { FaGlobeAmericas } from "react-icons/fa";
 
 // Importa tus imágenes reales (coloca tus capturas en /assets)
-import img1 from "../../assets/image.png";
-import img2 from "../../assets/photo.png";
-import img3 from "../../assets/logo.png";
-import img4 from "../../assets/image2.png";
-import img5 from "../../assets/work/thumb1.png";
+import img1 from "../../assets/work/consigueventas.png";
+import img2 from "../../assets/work/thumb1.png";
+import img3 from "../../assets/work/thumb2.png";
+import img4 from "../../assets/work/thumb3.png";
+import img5 from "../../assets/work/consigueventas.png";
+
+
 
 const proyectos = [
   {
@@ -51,16 +53,7 @@ const proyectos = [
     imagen: img4,
     enlace: "#",
   },
-  {
-  id: 5,
-  titulo: "Sistema de Inventario – Ferretería San José",
-  descripcion:
-    "Sistema web para control de inventario y ventas con autenticación de usuarios y reportes automáticos.",
-  tecnologias: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
-  imagen: img5, // asegúrate de importar img5 arriba
-  enlace: "#",
-},
-];
+  ];
 
 export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -72,7 +65,7 @@ export default function Carousel() {
   const activeProject = proyectos[activeIndex];
 
   return (
-    <section className="bg-[#1c1b22] text-white py-8 md:py-16">
+    <section id="proyectos" className="bg-[#1c1b22] text-white py-15 md:py-12">
       <div className="max-w-6xl mx-auto px-6">
         {/* 🔹 Encabezado general */}
         <div className="text-center mb-12">

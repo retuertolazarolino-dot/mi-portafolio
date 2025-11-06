@@ -121,3 +121,9 @@ select {
   opacity: 1;
   animation: rgbBorder 6s linear infinite;
 }
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 50px; /* ajusta según la altura real de tu navbar */
+}

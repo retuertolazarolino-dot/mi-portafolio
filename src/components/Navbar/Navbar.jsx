@@ -3,12 +3,13 @@ import logo from '../../assets/logo.png'
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 const navbarlinks = [
-  { id: 1, title: "Inicio", link: "/" },
-  { id: 2, title: "Servicios", link: "/" },
-  { id: 3, title: "Proyectos", link: "/" },
-  { id: 4, title: "Trabajos", link: "/" },
-  { id: 5, title: "Contacto", link: "/" },
-]
+  { id: 1, title: "Inicio", link: "#inicio" },
+  { id: 2, title: "Servicios", link: "#servicios" },
+  { id: 3, title: "Mi Trayectoria", link: "#trayectoria" },
+  { id: 4, title: "Proyectos", link: "#proyectos" },
+  { id: 5, title: "Contacto", link: "#contacto" },
+];
+
 
 const navbarRedes = [
   { id: 1, title: "Instagram", link: "https://consigueventas.com", icon: "bi bi-instagram" },
@@ -37,22 +38,28 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-[#1c1b22]/90 backdrop-blur-md shadow-md"
-            : "bg-transparent"
-        }`}
-      >
+<nav
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+    isOpen
+      ? "bg-[#1c1b22]" // 🔹 Fondo sólido cuando el menú móvil está abierto
+      : isScrolled
+      ? "bg-[#1c1b22]/90 backdrop-blur-md shadow-md" // 🔹 Al hacer scroll
+      : "bg-transparent" // 🔹 Estado normal (al inicio)
+  }`}
+>
+
         <div className="flex justify-between items-center sm:px-12 sm:py-6 px-4 py-5">
 
           {/* Logo */}
           <div>
-            <img
-              src={logo}
-              alt="Logo del sitio"
-              className="w-16 sm:w-20 md:w-[100px] transition-all duration-300"
-            />
+            {/* Logo con enlace al inicio */}
+            <a href="#inicio" className="flex items-center">
+              <img
+                src={logo}
+                alt="Logo del sitio"
+                className="w-16 sm:w-20 md:w-[100px] transition-all duration-300 cursor-pointer"
+              />
+            </a>
           </div>
 
           {/* Botón hamburguesa */}

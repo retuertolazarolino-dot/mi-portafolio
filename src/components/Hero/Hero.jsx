@@ -23,7 +23,9 @@ export default function HeroSection() {
   }));
 
   return (
-    <section className="relative bg-[#1c1b22] text-white py-32 md:py-40 overflow-hidden scroll-mt-[100px]">
+    <section
+  id="inicio"
+  className="relative bg-[#1c1b22] text-white pt-30 pb-15 md:py-40 overflow-hidden scroll-mt-[100px]">
       <div className="max-w-6xl mx-auto px-6 md:px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* Fondo con partículas */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -101,7 +103,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4"
           >
             <motion.a
-              href="/cv-lino-retuerto.pdf"
+              href="/CV/cv-lino-retuerto.pdf"
               download
               className="relative flex items-center gap-2 px-6 py-3 bg-[#00fd9c] text-[#0f172a] font-semibold rounded-md overflow-hidden group"
               whileHover={{ scale: 1.05 }}
