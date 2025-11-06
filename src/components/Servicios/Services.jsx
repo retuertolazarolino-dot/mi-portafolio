@@ -1,19 +1,36 @@
-import { useState } from 'react';
+import { useState } from "react";
+import img1 from "../../assets/work/service1.png";
+import img2 from "../../assets/work/service2.png";
+import img3 from "../../assets/work/service3.png";
+import img4 from "../../assets/work/service4.png";
+
 
 // === Iconos personalizados ===
 const CodeIcon = () => (
   <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+    <path
+      fillRule="evenodd"
+      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+      clipRule="evenodd"
+    />
   </svg>
 );
 const PaletteIcon = () => (
   <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-    <path fillRule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clipRule="evenodd" />
+    <path
+      fillRule="evenodd"
+      d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+      clipRule="evenodd"
+    />
   </svg>
 );
 const MobileIcon = () => (
   <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-    <path fillRule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+    <path
+      fillRule="evenodd"
+      d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z"
+      clipRule="evenodd"
+    />
   </svg>
 );
 const TeacherIcon = () => (
@@ -28,21 +45,21 @@ const services = [
     title: "Desarrollo Web WordPress",
     desc: "Diseño y desarrollo de sitios web y tiendas administrables con WordPress, Woocomerce y Elementor. Implementación de filtros dinámicos y optimización SEO.",
     icon: <CodeIcon />,
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+    image: img1,
   },
   {
     id: "02",
     title: "Diseño UI/UX",
     desc: "Diseño de interfaces modernas y usables, creando prototipos en Figma enfocados en mejorar la experiencia del usuario.",
     icon: <PaletteIcon />,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+    image: img2,
   },
   {
     id: "03",
-    title: "Integración de Aulas Virtuales",
+    title: "Aulas Virtuales",
     desc: "Configuración e implementación de plataformas Moodle para instituciones educativas, incluyendo personalización de cursos y emisión de certificados digitales.",
     icon: <TeacherIcon />,
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
+    image: img4,
   },
   {
     id: "04",
@@ -97,7 +114,8 @@ export default function Servicios() {
                 ></div>
 
                 {/* Contenedor principal */}
-                <div className="relative bg-[#232229] rounded-xl shadow-lg transition-all duration-500 md:overflow-hidden">
+                <div className="relative bg-[#232229] rounded-xl shadow-lg transition-all duration-500 md:overflow-hidden border border-[#036b559d]">
+
                   
                   {/* Imagen con título superpuesto */}
                   <div className="relative w-full h-48 md:h-80 overflow-hidden">
@@ -109,13 +127,13 @@ export default function Servicios() {
                       `}
                     />
 
-                    {/* Título sobre la imagen */}
+                    {/* 🔹 Título sobre la imagen (oculto en hover/touch activo) */}
                     <div
                       className={`absolute bottom-4 left-4 bg-white/10 backdrop-blur-md border border-white/20 
                                   rounded-md px-4 py-2 shadow-lg transition-opacity duration-500 z-20
                                   ${isCardActive ? "opacity-0" : "opacity-100"}`}
                     >
-                      <h3 className="text-lg font-semibold text-[#00fd9c] tracking-wide">
+                      <h3 className="text-lg font-semibold text-[#e4fcf3] tracking-wide">
                         {service.title}
                       </h3>
                     </div>
@@ -124,7 +142,7 @@ export default function Servicios() {
                   {/* Contenido móvil (expandible) */}
                   <div
                     className={`md:hidden transition-all duration-700 ease-in-out overflow-hidden ${
-                      isCardActive ? "max-h-[500px] opacity-100 p-6" : "max-h-0 opacity-0 p-0"
+                      isCardActive ? "max-h-[500px] opacity-100 p-6 mt-2" : "max-h-0 opacity-0 p-0"
                     }`}
                   >
                     <div>
@@ -132,6 +150,10 @@ export default function Servicios() {
                         <span className="text-4xl font-extrabold text-[#00fd9c]">{service.id}</span>
                         <span className="text-[#00fd9c] text-3xl">{service.icon}</span>
                       </div>
+
+                      {/* ✅ Título visible solo en contenido expandido */}
+                      <h3 className="text-2xl font-semibold mb-3 text-[#00fd9c]">{service.title}</h3>
+
                       <p className="text-gray-300 leading-relaxed">{service.desc}</p>
                     </div>
                   </div>
@@ -148,6 +170,7 @@ export default function Servicios() {
                         <span className="text-5xl font-extrabold text-[#00fd9c]">{service.id}</span>
                         <span className="text-[#00fd9c] text-3xl">{service.icon}</span>
                       </div>
+
                       <h3 className="text-2xl font-semibold mb-3 text-[#00fd9c]">{service.title}</h3>
                       <p className="text-gray-300 leading-relaxed">{service.desc}</p>
                     </div>

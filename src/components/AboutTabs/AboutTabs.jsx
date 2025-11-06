@@ -1,6 +1,30 @@
 import { useState } from "react";
 // 🚨 Asegúrate de importar motion y AnimatePresence
-import { motion, AnimatePresence } from "framer-motion"; 
+import { motion, AnimatePresence } from "framer-motion";
+
+// === Íconos de react-icons ===
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaPhp,
+  FaBootstrap,
+  FaWordpress,
+  FaFigma,
+  FaPython,
+} from "react-icons/fa";
+
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiMoodle,
+  SiAngular,
+  SiVite,
+  
+} from "react-icons/si";
+import { VscVscode, // <-- 🌟 CORRECCIÓN: Usamos el nombre que encontraste en la librería 'tb'
+} from "react-icons/vsc";
 
 // ... (datos y arrays se mantienen iguales) ...
 
@@ -78,19 +102,26 @@ const educacion = [
 
   
 
-const skillsData = [
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "React",
-  "Tailwind",
-  "PHP",
-  "Next.js",
-  "Bootstrap",
-  "WordPress",
-  "Moodle",
-  "Figma",
+
+// === ÍCONOS DE HABILIDADES ===
+const skillIcons = [
+  { name: "HTML5", icon: FaHtml5, color: "#00fd9c" },
+  { name: "CSS3", icon: FaCss3Alt, color: "#00fd9c" },
+  { name: "JavaScript", icon: FaJs, color: "#00fd9c" },
+  { name: "React", icon: FaReact, color: "#00fd9c" },
+  { name: "Tailwind", icon: SiTailwindcss, color: "#00fd9c" },
+  { name: "PHP", icon: FaPhp, color: "#00fd9c" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#00fd9c" },
+  { name: "Bootstrap", icon: FaBootstrap, color: "#00fd9c" },
+  { name: "WordPress", icon: FaWordpress, color: "#00fd9c" },
+  { name: "Moodle", icon: SiMoodle, color: "#00fd9c" },
+  { name: "Figma", icon: FaFigma, color: "#00fd9c" },
+  { name: "VS Code", icon: VscVscode, color: "#00fd9c" },
+  { name: "Angular", icon: SiAngular, color: "#00fd9c" },
+  { name: "Vite", icon: SiVite, color: "#00fd9c" },
+  { name: "Python", icon: FaPython, color: "#00fd9c" },
 ];
+
 
 
 const aboutData = [
@@ -180,37 +211,56 @@ const renderContent = (activeTab) => {
         </motion.div>
       );
 
-    case "skills":
-      return (
-        <motion.div
-          key="skills" // Key única es ESENCIAL para AnimatePresence
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          className="flex flex-col h-auto md:h-[400px]"
-        >
-          <h3 className="text-2xl font-semibold text-[#00fd9c] mb-4">Habilidades</h3>
-          <p className="text-gray-300 mb-6">Tecnologías y herramientas que utilizo en mi flujo de trabajo.</p>
+case "skills":
+  return (
+    <motion.div
+      key="skills"
+      variants={contentVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="flex flex-col h-auto md:h-[400px]"
+    >
+      <h3 className="text-2xl font-semibold text-[#00fd9c] mb-4">Habilidades</h3>
+      <p className="text-gray-300 mb-6">
+        Tecnologías y herramientas que utilizo en mi flujo de trabajo.
+      </p>
+
+      {/* 🔹 Grid con mayor separación vertical */}
+      <motion.div
+        className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-6 gap-y-8 sm:gap-y-15 place-items-center"
+        variants={listContainerVariants}
+        initial="initial"
+        animate="visible"
+      >
+        {skillIcons.map(({ name, icon: Icon, color }, i) => (
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
-            variants={listContainerVariants}
-            initial="initial"
-            animate="visible"
+            key={i}
+            variants={listItemVariants}
+            whileHover={{ scale: 1.15, y: -4 }} // Efecto leve de flotación
+            className="relative group flex flex-col items-center transition-all duration-300"
           >
-            {skillsData.map((skill, i) => (
-              <motion.div
-                key={i}
-                variants={listItemVariants}
-                whileHover={{ scale: 1.05 }}
-                className="bg-[#232229]/60 text-center p-4 rounded-lg border border-[#00fd9c]/20 hover:border-[#00fd9c]/60 transition-all duration-300 hover:shadow-[0_0_12px_rgba(0,253,156,0.3)]"
-              >
-                <p className="text-white font-semibold">{skill}</p>
-              </motion.div>
-            ))}
+            {/* 🔹 Ícono */}
+            <Icon
+              className="text-5xl text-white transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,253,156,0.4)]"
+              style={{ color: "white" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = color)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
+            />
+
+            {/* 🔹 Tooltip (nombre de la tecnología) */}
+            <span
+              className="absolute -top-10 bg-[#00fd9c] text-[#1c1b22] text-sm font-semibold px-3 py-1 rounded-md 
+                         opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300
+                         pointer-events-none shadow-lg whitespace-nowrap"
+            >
+              {name}
+            </span>
           </motion.div>
-        </motion.div>
-      );
+        ))}
+      </motion.div>
+    </motion.div>
+  );
 
     case "about":
       return (

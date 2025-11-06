@@ -8,8 +8,8 @@ import WorkSliderBtns from "./WorkSliderBtns";
 import { FaGlobeAmericas } from "react-icons/fa";
 
 // Importa tus imágenes reales (coloca tus capturas en /assets)
-import img1 from "../../assets/work/consigueventas.png";
-import img2 from "../../assets/work/thumb1.png";
+import img1 from "../../assets/work/work1.png";
+import img2 from "../../assets/work/ipdecti.png";
 import img3 from "../../assets/work/thumb2.png";
 import img4 from "../../assets/work/thumb3.png";
 import img5 from "../../assets/work/consigueventas.png";
@@ -28,10 +28,10 @@ const proyectos = [
   },
   {
     id: 2,
-    titulo: "Aula Virtual – IPDECTI (No disponible)",
+    titulo: "Aula Virtual – IPDECTI",
     descripcion:
       "Integración y personalización de plataforma Moodle para la gestión académica y emisión de certificados. Diseño de interfaz y configuración de cursos para mejorar la experiencia educativa.",
-    tecnologias: ["Moodle", "PHP", "CSS", "Canva"],
+    tecnologias: ["Moodle", "PHP", "CSS", "Canva", "Angular"],
     imagen: img2,
     enlace: "https://ipdecti.edu.pe/",
   },
@@ -95,7 +95,7 @@ export default function Carousel() {
                   <motion.img
                     src={proyecto.imagen}
                     alt={proyecto.titulo}
-                    className="w-full h-[350px] md:h-[420px] object-cover rounded-xl shadow-lg"
+                    className="w-full h-[350px] md:h-[420px] object-contain rounded-xl shadow-lg"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}

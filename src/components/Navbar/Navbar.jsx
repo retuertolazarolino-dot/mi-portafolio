@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 const navbarlinks = [
-  { id: 1, title: "Inicio", link: "#inicio" },
+  
   { id: 2, title: "Servicios", link: "#servicios" },
   { id: 3, title: "Mi Trayectoria", link: "#trayectoria" },
   { id: 4, title: "Proyectos", link: "#proyectos" },
