@@ -10,7 +10,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 // Importa tus imágenes reales (coloca tus capturas en /assets)
 import img1 from "../../assets/work/work1.png";
 import img2 from "../../assets/work/ipdecti.png";
-import img3 from "../../assets/work/thumb2.png";
+import img3 from "../../assets/work/animalPets.png";
 import img4 from "../../assets/work/thumb3.png";
 import img5 from "../../assets/work/consigueventas.png";
 
@@ -21,7 +21,7 @@ const proyectos = [
     id: 1,
     titulo: "Sitio Web – Consigue Ventas",
     descripcion:
-      "Desarrollo de sitios web empresariales bajo metodología Scrum. Implementación de secciones internas, diseño responsivo y funcionalidades como banners de cookies y e-commerce con WooCommerce.",
+      "Durante mis prácticas en la agencia participé en el desarrollo de proyectos digitales como desarrollador web, utilizando WordPress y Elementor. Lideré el proyecto Consigue Ventas dentro de la agencia.",
     tecnologias: ["WordPress", "Elementor", "JavaScript", "CSS"],
     imagen: img1,
     enlace: "https://consigueventas.com/", // cambia a la URL real si el sitio está online
@@ -37,12 +37,12 @@ const proyectos = [
   },
   {
     id: 3,
-    titulo: "Aplicación Móvil – Animal Pets (No disponible)",
+    titulo: "Aplicación Móvil – Animal Pets",
     descripcion:
       "Aplicación móvil para el registro y seguimiento de pacientes veterinarios, con módulos de historial clínico y gestión de citas.",
-    tecnologias: ["JavaScript", "Firebase", "Figma"],
+    tecnologias: ["JavaScript", "Firebase", "Figma", "Android Studio"],
     imagen: img3,
-    enlace: "#",
+    enlace: "https://drive.google.com/file/d/1v8n2UeQWdkOdmXN0k2vjZNBng1N8rmNq/view?usp=sharing",
   },
   {
     id: 4,
