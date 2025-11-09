@@ -242,7 +242,7 @@ export default function ContactSection() {
       label: "Perfil Social",
       value: "Lino Retuerto",
       link: "https://www.linkedin.com/in/lino-alberto-retuerto-lazaro-834b29358/",
-    },
+    }, 
     {
       icon: FaClock,
       label: "Horario de Respuesta",

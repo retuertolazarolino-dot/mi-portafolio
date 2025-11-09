@@ -12,10 +12,27 @@ const navbarlinks = [
 
 
 const navbarRedes = [
-  { id: 1, title: "Instagram", link: "https://consigueventas.com", icon: "bi bi-instagram" },
-  { id: 2, title: "Facebook", link: "https://consigueventas.com", icon: "bi bi-facebook" },
-  { id: 3, title: "WhatsApp", link: "https://consigueventas.com", icon: "bi bi-whatsapp" },
+  {
+    id: 1,
+    title: "WhatsApp",
+    link: "https://wa.me/51986895900?text=Hola,%20quisiera%20consultar%20sobre%20un%20proyecto.",
+    icon: "bi bi-whatsapp"
+  },
+  {
+    id: 2,
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/lino-alberto-retuerto-lazaro-834b29358/",
+    icon: "bi bi-linkedin"
+  },
+  {
+    id: 3,
+    title: "Facebook",
+    link: "https://www.facebook.com/lialrela/",
+    icon: "bi bi-facebook"
+  },
+  
 ]
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)

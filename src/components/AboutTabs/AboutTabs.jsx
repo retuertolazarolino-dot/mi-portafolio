@@ -134,6 +134,57 @@ const aboutData = [
 ];
 
 
+// 🚨 Nuevo componente para gestionar el estado de tap
+const SkillIconWithTap = ({ name, icon: Icon, color }) => {
+  // Estado para saber si el ícono ha sido tocado (solo relevante en móvil)
+  const [isTapped, setIsTapped] = useState(false);
+
+  // Función que se activa al hacer clic/tocar
+  const handleTap = () => {
+    // Solo alternamos el estado si no estamos en una pantalla de escritorio (sm o más)
+    // Usamos una verificación sencilla, aunque lo ideal sería usar un hook de detección de tamaño de pantalla.
+    // Para simplificar, asumimos que 'onClick' en móvil es un 'tap'.
+    setIsTapped((prev) => !prev);
+  };
+  
+  // Clases CSS condicionales para el tooltip
+  const tooltipClasses = `
+    absolute -top-10 bg-[#00fd9c] text-[#1c1b22] text-sm font-semibold px-3 py-1 rounded-md 
+    pointer-events-none shadow-lg whitespace-nowrap
+    transition-all duration-300
+    
+    // --- Comportamiento en Móvil (sin prefijo) ---
+    ${isTapped ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} 
+    
+    // --- Comportamiento en Escritorio (sm y mayores) ---
+    sm:opacity-0 sm:scale-90 sm:group-hover:opacity-100 sm:group-hover:scale-100
+  `;
+
+  return (
+    <motion.div
+      variants={listItemVariants}
+      whileHover={{ scale: 1.15, y: -4 }} 
+      // Usamos onClick para el 'tap' en móvil y el 'click' en escritorio (aunque el hover predominará)
+      onClick={handleTap} 
+      onMouseEnter={() => setIsTapped(false)} // Desactiva el estado 'tapped' si entra el hover
+      className="relative group flex flex-col items-center transition-all duration-300 cursor-pointer"
+    >
+      {/* 🔹 Ícono */}
+      <Icon
+        className="text-5xl text-white transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,253,156,0.4)]"
+        style={{ color: "white" }}
+        onMouseEnter={(e) => (e.currentTarget.style.color = color)}
+        onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
+      />
+
+      {/* 🔹 Tooltip (nombre de la tecnología) */}
+      <span className={tooltipClasses}>
+        {name}
+      </span>
+    </motion.div>
+  );
+};
+
 const renderContent = (activeTab) => {
   switch (activeTab) {
     case "experience":
@@ -233,35 +284,19 @@ case "skills":
         initial="initial"
         animate="visible"
       >
-        {skillIcons.map(({ name, icon: Icon, color }, i) => (
-          <motion.div
-            key={i}
-            variants={listItemVariants}
-            whileHover={{ scale: 1.15, y: -4 }} // Efecto leve de flotación
-            className="relative group flex flex-col items-center transition-all duration-300"
-          >
-            {/* 🔹 Ícono */}
-            <Icon
-              className="text-5xl text-white transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,253,156,0.4)]"
-              style={{ color: "white" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = color)}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
-            />
-
-            {/* 🔹 Tooltip (nombre de la tecnología) */}
-            <span
-              className="absolute -top-10 bg-[#00fd9c] text-[#1c1b22] text-sm font-semibold px-3 py-1 rounded-md 
-                         opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300
-                         pointer-events-none shadow-lg whitespace-nowrap"
-            >
-              {name}
-            </span>
-          </motion.div>
+        {/* USAMOS EL NUEVO COMPONENTE */}
+        {skillIcons.map((skill, i) => (
+          <SkillIconWithTap 
+            key={i} 
+            name={skill.name} 
+            icon={skill.icon} 
+            color={skill.color} 
+          />
         ))}
+        {/* FIN DEL NUEVO COMPONENTE */}
       </motion.div>
     </motion.div>
   );
-
     case "about":
       return (
         <motion.div
