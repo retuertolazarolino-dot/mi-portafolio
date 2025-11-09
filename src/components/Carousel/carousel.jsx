@@ -65,7 +65,7 @@ export default function Carousel() {
   const activeProject = proyectos[activeIndex];
 
   return (
-    <section id="proyectos" className="bg-[#1c1b22] text-white py-15 md:py-12">
+    <section id="proyectos" className="bg-[#1c1b22] text-white py-15 md:py-12 scroll-mt-[60px]">
       <div className="max-w-6xl mx-auto px-6">
         {/* 🔹 Encabezado general */}
         <div className="text-center mb-12">

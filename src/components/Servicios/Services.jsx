@@ -81,7 +81,7 @@ export default function Servicios() {
   const isActive = (index) => hoveredIndex === index || selectedCard === index;
 
   return (
-    <section id="servicios" className="py-16 bg-[#1c1b22] text-white min-h-screen">
+    <section id="servicios" className="py-16 bg-[#1c1b22] text-white min-h-screen scroll-mt-[60px]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Título principal */}
         <div className="text-center mb-16">

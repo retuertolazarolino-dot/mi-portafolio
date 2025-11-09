@@ -297,6 +297,8 @@ case "skills":
       </motion.div>
     </motion.div>
   );
+
+  
     case "about":
       return (
         <motion.div
@@ -345,7 +347,7 @@ const AboutTabs = () => {
   const [activeTab, setActiveTab] = useState("experience");
 
   return (
-    <section id="trayectoria" className="bg-[#1c1b22] text-white py-5 md:py-20">
+    <section id="trayectoria" className="bg-[#1c1b22] text-white py-5 md:py-20 scroll-mt-[60px]">
       <div className="max-w-6xl mx-auto px-6">
         {/* 🔹 Encabezado general con animación de entrada */}
         <div className="text-center mb-12">

@@ -56,7 +56,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="bg-[#1c1b22] text-white py-10 flex flex-col items-center">
+    <section id="contacto" className="bg-[#1c1b22] text-white py-10 flex flex-col items-center scroll-mt-[70px]">
       {/* 🔹 Título */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
